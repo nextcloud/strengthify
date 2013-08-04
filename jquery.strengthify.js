@@ -1,6 +1,6 @@
 /**
  * Strengthify - show the weakness of a password (uses zxcvbn for this)
- * jquery.strengthify.js
+ * https://github.com/kabum/strengthify
  *
  * Version: 0.1
  * Author: Morris Jobke (github.com/kabum)
@@ -62,9 +62,9 @@
 				var password = $(this).val()
 
 				// hide strengthigy if no input is provided
-				$('.strengthify-container').css(
+				$('.strengthify-wrapper').css(
 					'display',
-					(password === '') ? 'none' : 'inline.block'
+					(password === '') ? 'none' : 'inline-block'
 				)
 
 				// calculate result
