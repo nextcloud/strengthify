@@ -7,7 +7,7 @@
  */
 
 .strengthify-bg, .strengthify-container, .strengthify-wrapper, .strengthify-separator {
-	height: 5px;
+	height: 3px;
 }
 
 .strengthify-bg, .strengthify-container {
@@ -24,7 +24,7 @@
 	display: inline-block;
 	position: absolute;
 	background-color: #FFF;
-	width: 2px;
+	width: 1px;
 	z-index: 10;
 }
 
