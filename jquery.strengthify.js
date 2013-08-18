@@ -54,6 +54,8 @@
 			.append('<div class="strengthify-separator" style="left: 50%" />')
 			.append('<div class="strengthify-separator" style="left: 75%" />')
 
+		var oldDisplayState = $('.strengthify-wrapper').css('display')
+
 		$.ajax({
 			cache: true,
 			dataType: 'script',
@@ -65,7 +67,7 @@
 				// hide strengthigy if no input is provided
 				$('.strengthify-wrapper').css(
 					'display',
-					(password === '') ? 'none' : 'inline-block'
+					(password === '') ? oldDisplayState : 'inline-block'
 				)
 
 				// calculate result
@@ -101,6 +103,11 @@
 					'title',
 					options.titles[result.score]
 				)
+
+				// reset state for empty string password
+				if(password === '') {
+					$('.strengthify-container').css('width', 0)
+				}
 
 			})
 		})
