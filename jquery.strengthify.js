@@ -2,7 +2,7 @@
  * Strengthify - show the weakness of a password (uses zxcvbn for this)
  * https://github.com/kabum/strengthify
  *
- * Version: 0.2
+ * Version: 0.3
  * Author: Morris Jobke (github.com/kabum)
  *
  * License:
@@ -65,9 +65,13 @@
 				var password = $(this).val()
 
 				// hide strengthigy if no input is provided
-				$('.strengthify-wrapper').css(
-					'display',
-					(password === '') ? oldDisplayState : 'inline-block'
+				var opacity = (password === '') ? 0 : 1
+				$('.strengthify-wrapper').children().css(
+					'opacity',
+					opacity
+				).css(
+					'-ms-filter',
+					'"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"'
 				)
 
 				// calculate result
@@ -102,7 +106,18 @@
 				$('.strengthify-wrapper').attr(
 					'title',
 					options.titles[result.score]
+				).tipsy({
+					trigger: 'manual',
+					opacity: opacity
+				}).tipsy(
+					'show'
 				)
+
+				if(opacity === 0) {
+					$('.strengthify-wrapper').tipsy(
+						'hide'
+					)
+				}
 
 				// reset state for empty string password
 				if(password === '') {
