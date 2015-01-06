@@ -2,7 +2,7 @@
  * Strengthify - show the weakness of a password (uses zxcvbn for this)
  * https://github.com/kabum/strengthify
  *
- * Version: 0.3
+ * Version: 0.4.1
  * Author: Morris Jobke (github.com/kabum)
  *
  * License:
@@ -125,7 +125,7 @@
 					$container.css('width', 0);
 				}
 
-			})
+			});
 		});
 
 		return me;

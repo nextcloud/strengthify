@@ -67,6 +67,8 @@ Versions
 --------
 
 <dl>
+  <dt>0.4.1</dt>
+  <dd>hotfix for missing ;</dd>
   <dt>0.4</dt>
   <dd>syntax and performance cleanups</dd>
   <dt>0.3</dt>
