@@ -32,20 +32,18 @@
 /* global jQuery */
 (function ($) {
 	$.fn.strengthify = function(paramOptions) {
-		var me = this;
-
-		var defaults = {
-			zxcvbn: 'zxcvbn/zxcvbn.js',
-			titles: [
-				'Weakest',
-				'Weak',
-				'So-so',
-				'Good',
-				'Perfect'
-			]
-		};
-
-		var options = $.extend(defaults, paramOptions);
+		var me = this,
+			defaults = {
+				zxcvbn: 'zxcvbn/zxcvbn.js',
+				titles: [
+					'Weakest',
+					'Weak',
+					'So-so',
+					'Good',
+					'Perfect'
+				]
+			},
+			options = $.extend(defaults, paramOptions);
 
 		// add elements
 		$('.strengthify-wrapper')
@@ -61,11 +59,17 @@
 			url: options.zxcvbn
 		}).done(function() {
 			me.bind('keyup input', function() {
-				var password = $(this).val();
+				var password = $(this).val(),
+					// hide strengthigy if no input is provided
+					opacity = (password === '') ? 0 : 1,
+					// calculate result
+					result = zxcvbn(password),
+					css = '',
+					// cache jQuery selections
+					$container = $('.strengthify-container'),
+					$wrapper = $('.strengthify-wrapper');
 
-				// hide strengthigy if no input is provided
-				var opacity = (password === '') ? 0 : 1;
-				$('.strengthify-wrapper').children().css(
+				$wrapper.children().css(
 					'opacity',
 					opacity
 				).css(
@@ -73,10 +77,6 @@
 					'"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"'
 				);
 
-				// calculate result
-				var result = zxcvbn(password);
-
-				var css = '';
 				// style strengthify bar
 				// possible scores: 0-4
 				switch(result.score) {
@@ -93,16 +93,18 @@
 						break;
 				}
 
-				$('.strengthify-container').attr('class', css + ' strengthify-container');
-				// possible scores: 0-4
-				$('.strengthify-container').css(
-					'width',
-					// if score is '0' it will be changed to '1' to
-					// not hide strengthify if the password is extremely weak
-					((result.score == 0 ? 1 : result.score) * 25) + '%'
-				);
+				$container
+					.attr('class', css + ' strengthify-container')
+					// possible scores: 0-4
+					.css(
+						'width',
+						// if score is '0' it will be changed to '1' to
+						// not hide strengthify if the password is extremely weak
+						((result.score === 0 ? 1 : result.score) * 25) + '%'
+					);
+
 				// set a title for the wrapper
-				$('.strengthify-wrapper').attr(
+				$wrapper.attr(
 					'title',
 					options.titles[result.score]
 				).tipsy({
@@ -113,14 +115,14 @@
 				);
 
 				if(opacity === 0) {
-					$('.strengthify-wrapper').tipsy(
+					$wrapper.tipsy(
 						'hide'
 					);
 				}
 
 				// reset state for empty string password
 				if(password === '') {
-					$('.strengthify-container').css('width', 0);
+					$container.css('width', 0);
 				}
 
 			})
