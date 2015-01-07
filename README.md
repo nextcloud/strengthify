@@ -6,7 +6,7 @@ Combine jQuery and zxcvbn to create a password strength meter.
 How to use
 ----------
 
-Add following wrapper to your document - preferably nearby the
+Add the following wrapper to your document - preferably near the
 password field.
 
 ```HTML
@@ -24,8 +24,7 @@ Add `jquery` (tested with 1.10.0), `jquery.strengthify.js` and
 ```
 
 Because [zxcvbn](https://github.com/lowe/zxcvbn) is really
-heavy-weigth it will be loaded asynchronous from `zxcvbn/zxcvbn.js`,
-but this can be configured with an optional parameter.
+heavyweight, it will be loaded asynchronously from `zxcvbn/zxcvbn.js`. This can however be configured with an optional parameter.
 
 Then call `.strengthify` on the password input field.
 
@@ -33,7 +32,7 @@ Then call `.strengthify` on the password input field.
 $('#password-field').strengthify()
 ```
 
-That's it. Now the password strength meter will be updated on
+That's it. Now the password strength meter will be updated after
 each keystroke.
 
 Configuration
