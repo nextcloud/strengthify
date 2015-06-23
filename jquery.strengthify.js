@@ -59,8 +59,8 @@
 			dataType: 'script',
 			url: options.zxcvbn
 		}).done(function() {
-			me.bind('keyup input', function() {
-				var password = $(this).val(),
+			function update() {
+				var password = me.val(),
 					// hide strengthify if no input is provided
 					opacity = (password === '') ? 0 : 1,
 					// calculate result
@@ -126,7 +126,11 @@
 					$container.css('width', 0);
 				}
 
-			});
+			};
+			me.bind('keyup input', update);
+			if (me.val()) {
+				update();
+			}
 		});
 
 		return me;
