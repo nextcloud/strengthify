@@ -41,7 +41,8 @@
 					'So-so',
 					'Good',
 					'Perfect'
-				]
+				],
+				inputs: []
 			},
 			options = $.extend(defaults, paramOptions);
 
@@ -60,10 +61,10 @@
 		}).done(function() {
 			me.bind('keyup input', function() {
 				var password = $(this).val(),
-					// hide strengthigy if no input is provided
+					// hide strengthify if no input is provided
 					opacity = (password === '') ? 0 : 1,
 					// calculate result
-					result = zxcvbn(password),
+					result = zxcvbn(password, typeof options.inputs === 'function' ? options.inputs() : options.inputs),
 					css = '',
 					// cache jQuery selections
 					$container = $('.strengthify-container'),
