@@ -107,15 +107,15 @@
 				$wrapper.attr(
 					'title',
 					options.titles[result.score]
-				).tipsy({
+				).tooltip({
+					placement: 'bottom',
 					trigger: 'manual',
-					opacity: opacity
-				}).tipsy(
+				}).tooltip(
 					'show'
 				);
 
 				if(opacity === 0) {
-					$wrapper.tipsy(
+					$wrapper.tooltip(
 						'hide'
 					);
 				}

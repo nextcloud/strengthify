@@ -13,12 +13,12 @@ password field.
 <div class="strengthify-wrapper"></div>
 ```
 
-Add `jquery` (tested with 1.10.0), `jquery.strengthify.js` and
+Add `jquery` (tested with 1.10.0), bootstrap's `tooltip.js`, `jquery.strengthify.js` and
 `strengthify.css` to your document.
 
 ```HTML
 <script src="jquery-1.10.0.min.js"></script>
-<script src="jquery-tipsy.js"></script>
+<script src="tooltip.js"></script>
 <script src="jquery.strengthify.js"></script>
 <link rel="stylesheet" href="strengthify.css" type="text/css">
 ```
