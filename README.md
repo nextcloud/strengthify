@@ -41,6 +41,9 @@ Configuration
 The path and the title of the different strength categories can
 be configured with the first parameter of `.strengthify`.
 
+The inputs property is an array of words to add to zxcvbn's dictionary
+or a function that returns the array to use.
+
 Default:
 
 ```JSON
@@ -52,7 +55,8 @@ Default:
     "So-so",
     "Good",
     "Perfect"
-  ]
+  ],
+  "inputs": []
 }
 ```
 

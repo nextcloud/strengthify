@@ -6,6 +6,10 @@
  * Copyright (c) 2013 Morris Jobke <morris.jobke@gmail.com>
  */
 
+.strengthify-wrapper {
+	position: relative;
+}
+
 .strengthify-wrapper > * {
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
