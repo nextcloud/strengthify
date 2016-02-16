@@ -46,3 +46,7 @@
 .password-good {
 	background-color: #3C3;
 }
+
+div[data-strengthifyMessage] {
+    padding: 3px 8px;
+}

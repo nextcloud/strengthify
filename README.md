@@ -6,12 +6,15 @@ Combine jQuery and zxcvbn to create a password strength meter.
 How to use
 ----------
 
+As of 0.5.0, the wrapper will be automatically added beneath the target input field
+<del>
 Add the following wrapper to your document - preferably near the
 password field.
 
 ```HTML
 <div class="strengthify-wrapper"></div>
 ```
+</del>
 
 Add `jquery` (tested with 1.10.0), bootstrap's `tooltip.js`, `jquery.strengthify.js` and
 `strengthify.css` to your document.
@@ -52,7 +55,10 @@ Default:
     "So-so",
     "Good",
     "Perfect"
-  ]
+  ],
+  drawTitles: false, // pop-up text (above)
+  drawMessage: false, // detailed message beneath input
+  drawBars: true // password strength color progression bars beneath input
 }
 ```
 
@@ -66,6 +72,16 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.0</dt>
+  <dd> fairly substantial changes:
+    <ul>
+        <li>added feedback message</li>
+        <li> $.each(...) functionality</li>
+        <li> restructuring wrapping</li>
+        <li> feature flags</li>
+    </ul>
+     "strengthify-wrapper" added automatically beneath target input
+  </dd>
   <dt>0.4.1</dt>
   <dd>hotfix for missing ;</dd>
   <dt>0.4</dt>
