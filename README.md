@@ -7,14 +7,6 @@ How to use
 ----------
 
 As of 0.5.0, the wrapper will be automatically added beneath the target input field
-<del>
-Add the following wrapper to your document - preferably near the
-password field.
-
-```HTML
-<div class="strengthify-wrapper"></div>
-```
-</del>
 
 Add `jquery` (tested with 1.10.0), `jquery.strengthify.js` and
 `strengthify.css` to your document.
@@ -32,7 +24,8 @@ If using the titles option, include bootstrap's `tooltip.js`,
 ```
 
 Because [zxcvbn](https://github.com/lowe/zxcvbn) is really
-heavyweight, it will be loaded asynchronously from `zxcvbn/zxcvbn.js`. This can however be configured with an optional parameter.
+heavyweight, it will be loaded asynchronously from `zxcvbn/zxcvbn.js`. 
+This can however be configured with an optional parameter.
 
 Then call `.strengthify` on the password input field.
 
@@ -49,6 +42,13 @@ Configuration
 The path and the title of the different strength categories can
 be configured with the first parameter of `.strengthify`.
 
+
+<dl>
+<dt>drawTitles</dt><dd> pop-up text (above)</dd>
+<dt>drawMessage</dt><dd> detailed message beneath input</dd>
+<dt>drawBars</dt><dd> password strength color progression bars beneath input</dd>
+</dl>
+
 Default:
 
 ```JSON
@@ -61,12 +61,11 @@ Default:
     "Good",
     "Perfect"
   ],
-  drawTitles: false, // pop-up text (above)
-  drawMessage: false, // detailed message beneath input
-  drawBars: true // password strength color progression bars beneath input
+  drawTitles: false,
+  drawMessage: false,
+  drawBars: true
 }
 ```
-
 Overwrite example:
 
 ```JavaScript
@@ -77,6 +76,8 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.2</dt>
+  <dd>fix css to limit width of strength bar</dd>
   <dt>0.5.1</dt>
   <dd>.strengthify-wrapper should have flexible height</dd>
   <dt>0.5.0</dt>
