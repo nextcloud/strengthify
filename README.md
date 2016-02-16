@@ -16,13 +16,18 @@ password field.
 ```
 </del>
 
-Add `jquery` (tested with 1.10.0), bootstrap's `tooltip.js`, `jquery.strengthify.js` and
+Add `jquery` (tested with 1.10.0), `jquery.strengthify.js` and
 `strengthify.css` to your document.
+
+If using the message option, include bootstrap.
+
+If using the titles option, include bootstrap's `tooltip.js`,
 
 ```HTML
 <script src="jquery-1.10.0.min.js"></script>
 <script src="tooltip.js"></script>
 <script src="jquery.strengthify.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="strengthify.css" type="text/css">
 ```
 
@@ -72,6 +77,8 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.1</dt>
+  <dd>.strengthify-wrapper should have flexible height</dd>
   <dt>0.5.0</dt>
   <dd> fairly substantial changes:
     <ul>

@@ -15,7 +15,7 @@
 	transition:all .5s ease-in-out;
 }
 
-.strengthify-bg, .strengthify-container, .strengthify-wrapper, .strengthify-separator {
+.strengthify-bg, .strengthify-container, .strengthify-separator {
 	height: 3px;
 }
 
