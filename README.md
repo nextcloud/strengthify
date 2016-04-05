@@ -61,9 +61,9 @@ Default:
     "Good",
     "Perfect"
   ],
-  drawTitles: false,
-  drawMessage: false,
-  drawBars: true
+  "drawTitles": false,
+  "drawMessage": false,
+  "drawBars": true
 }
 ```
 Overwrite example:
@@ -76,10 +76,6 @@ Versions
 --------
 
 <dl>
-  <dt>0.5.2</dt>
-  <dd>fix css to limit width of strength bar</dd>
-  <dt>0.5.1</dt>
-  <dd>.strengthify-wrapper should have flexible height</dd>
   <dt>0.5.0</dt>
   <dd> fairly substantial changes:
     <ul>
