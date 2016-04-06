@@ -6,25 +6,26 @@ Combine jQuery and zxcvbn to create a password strength meter.
 How to use
 ----------
 
-Add the following wrapper to your document - preferably near the
-password field.
+As of 0.5.0, the wrapper will be automatically added beneath the target input field
 
-```HTML
-<div class="strengthify-wrapper"></div>
-```
-
-Add `jquery` (tested with 1.10.0), bootstrap's `tooltip.js`, `jquery.strengthify.js` and
+Add `jquery` (tested with 1.10.0), `jquery.strengthify.js` and
 `strengthify.css` to your document.
+
+If using the message option, include bootstrap.
+
+If using the titles option, include bootstrap's `tooltip.js`,
 
 ```HTML
 <script src="jquery-1.10.0.min.js"></script>
 <script src="tooltip.js"></script>
 <script src="jquery.strengthify.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="strengthify.css" type="text/css">
 ```
 
 Because [zxcvbn](https://github.com/lowe/zxcvbn) is really
-heavyweight, it will be loaded asynchronously from `zxcvbn/zxcvbn.js`. This can however be configured with an optional parameter.
+heavyweight, it will be loaded asynchronously from `zxcvbn/zxcvbn.js`. 
+This can however be configured with an optional parameter.
 
 Then call `.strengthify` on the password input field.
 
@@ -41,6 +42,13 @@ Configuration
 The path and the title of the different strength categories can
 be configured with the first parameter of `.strengthify`.
 
+
+<dl>
+<dt>drawTitles</dt><dd> pop-up text (above)</dd>
+<dt>drawMessage</dt><dd> detailed message beneath input</dd>
+<dt>drawBars</dt><dd> password strength color progression bars beneath input</dd>
+</dl>
+
 Default:
 
 ```JSON
@@ -52,10 +60,12 @@ Default:
     "So-so",
     "Good",
     "Perfect"
-  ]
+  ],
+  "drawTitles": false,
+  "drawMessage": false,
+  "drawBars": true
 }
 ```
-
 Overwrite example:
 
 ```JavaScript
@@ -66,6 +76,16 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.0</dt>
+  <dd> fairly substantial changes:
+    <ul>
+        <li>added feedback message</li>
+        <li> $.each(...) functionality</li>
+        <li> restructuring wrapping</li>
+        <li> feature flags</li>
+    </ul>
+     "strengthify-wrapper" added automatically beneath target input
+  </dd>
   <dt>0.4.1</dt>
   <dd>hotfix for missing ;</dd>
   <dt>0.4</dt>
