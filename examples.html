@@ -1,0 +1,90 @@
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="jquery.strengthify.js"></script>
+	<link rel="stylesheet" href="strengthify.css" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style type="text/css">
+	.password-group {
+		padding: 10px;
+		width: 250px;
+	}
+	input {
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+	<div class="password-group">
+		<label for="p1">Standard 1</label>
+		<input id="p1" class="password-field">
+	</div>
+	<div class="password-group">
+		<label for="p2">Standard 2</label>
+		<input id="p2" class="password-field">
+	</div>
+	<div class="password-group">
+		<label for="p3">drawTitles, drawMessage, drawBars</label>
+		<input id="p3" class="password-field-all">
+	</div>
+	<div class="password-group">
+		<label for="p4">drawMessage, drawBars</label>
+		<input id="p4" class="password-field-minus-titles">
+	</div>
+	<div class="password-group">
+		<label for="p5">drawTitles, drawBars</label>
+		<input id="p5" class="password-field-minus-message">
+	</div>
+	<div class="password-group">
+		<label for="p6">drawTitles, drawMessage</label>
+		<input id="p6" class="password-field-minus-bars">
+	</div>
+	<div class="password-group">
+		<label for="p7">drawMessage</label>
+		<input id="p7" class="password-field-only-message">
+	</div>
+	<div class="password-group">
+		<label for="p8">drawTitles</label>
+		<input id="p8" class="password-field-only-title">
+	</div>
+	<script type="text/javascript">
+		$('.password-field').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js'
+		})
+		$('.password-field-all').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js',
+			drawTitles: true,
+			drawMessage: true
+		})
+		$('.password-field-minus-titles').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js',
+			drawTitles: false,
+			drawMessage: true
+		})
+		$('.password-field-minus-message').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js',
+			drawTitles: true,
+			drawMessage: false
+		})
+		$('.password-field-minus-bars').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js',
+			drawTitles: true,
+			drawMessage: true,
+			drawBars: false
+		})
+		$('.password-field-only-message').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js',
+			drawTitles: false,
+			drawMessage: true,
+			drawBars: false
+		})
+		$('.password-field-only-title').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js',
+			drawTitles: true,
+			drawMessage: false,
+			drawBars: false
+		})
+	</script>
+</body>
+</html>

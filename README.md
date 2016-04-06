@@ -3,6 +3,8 @@ strengthify
 
 Combine jQuery and zxcvbn to create a password strength meter.
 
+![Examples](examples.png)
+
 How to use
 ----------
 
@@ -23,8 +25,8 @@ If using the titles option, include bootstrap's `tooltip.js`,
 <link rel="stylesheet" href="strengthify.css" type="text/css">
 ```
 
-Because [zxcvbn](https://github.com/lowe/zxcvbn) is really
-heavyweight, it will be loaded asynchronously from `zxcvbn/zxcvbn.js`. 
+Because [zxcvbn](https://github.com/dropbox/zxcvbn) is really
+heavyweight, it will be loaded asynchronously from `zxcvbn/zxcvbn.js`.
 This can however be configured with an optional parameter.
 
 Then call `.strengthify` on the password input field.
