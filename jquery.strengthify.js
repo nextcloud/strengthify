@@ -45,6 +45,10 @@
                 'Good',
                 'Perfect'
             ],
+            tilesOptions:{
+              tooltip: true,
+              element: false
+            },
             drawTitles: false,
             drawMessage: false,
             drawBars: true
@@ -139,22 +143,28 @@
 
                 if (options.drawTitles) {
                     // set a title for the wrapper
-                    $wrapper.attr(
-                        'title',
-                        options.titles[result.score]
-                    ).tooltip({
-                        placement: 'bottom',
-                        trigger: 'manual',
-                    }).tooltip(
-                        'fixTitle'
-                    ).tooltip(
-                        'show'
+                    if(options.tilesOptions.tooltip){
+                        $wrapper.attr(
+                            'title',
+                            options.titles[result.score]
+                        ).tooltip({
+                            placement: 'bottom',
+                            trigger: 'manual',
+                        }).tooltip(
+                            'fixTitle'
+                        ).tooltip(
+                            'show'
                         );
 
-                    if (opacity === 0) {
-                        $wrapper.tooltip(
-                            'hide'
-                        );
+                        if (opacity === 0) {
+                            $wrapper.tooltip(
+                                'hide'
+                            );
+                        }
+                    }
+
+                    if(options.tilesOptions.element){
+                        $wrapper.find(".strengthify-tiles").text(options.titles[result.score]);
                     }
                 }
             };
@@ -178,6 +188,10 @@
 
                 if (options.drawMessage) {
                     getWrapperFor(elemId).append('<div data-strengthifyMessage></div>');
+                }
+
+                if (options.drawTitles && options.tilesOptions) {
+                    getWrapperFor(elemId).append('<div class="strengthify-tiles"></div>');
                 }
 
                 $elem.parent().on('scroll', drawSelf);

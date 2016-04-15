@@ -48,6 +48,14 @@
 		<label for="p8">drawTitles</label>
 		<input id="p8" class="password-field-only-title">
 	</div>
+	<div class="password-group">
+		<label for="p9">drawTitlesWithoutTooltip</label>
+		<input id="p9" class="password-field-title-without-tooltip">
+	</div>
+	<div class="password-group">
+		<label for="p10">drawTitlesTooltipAndElement</label>
+		<input id="p10" class="password-field-title-tooltip-element">
+	</div>
 	<script type="text/javascript">
 		$('.password-field').strengthify({
 			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js'
@@ -85,6 +93,28 @@
 			drawMessage: false,
 			drawBars: false
 		})
+		$('.password-field-title-without-tooltip').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js',
+			tilesOptions:{
+				tooltip: false,
+				element: true
+			},
+			drawTitles: true,
+			drawMessage: false,
+			drawBars: true
+		})
+		$('.password-field-title-tooltip-element').strengthify({
+			zxcvbn: 'https://cdn.rawgit.com/dropbox/zxcvbn/master/dist/zxcvbn.js',
+			tilesOptions:{
+				tooltip: true,
+				element: true
+			},
+			drawTitles: true,
+			drawMessage: false,
+			drawBars: false
+		})
+
+
 	</script>
 </body>
 </html>

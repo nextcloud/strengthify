@@ -54,3 +54,7 @@
 div[data-strengthifyMessage] {
     padding: 3px 8px;
 }
+
+.strengthify-tiles{
+	float: right;
+}
