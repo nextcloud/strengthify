@@ -107,6 +107,7 @@
                         css = 'password-good';
                         bsLevel = 'info';
                         message = "Getting better.";
+                        break;
                     case 4:
                         css = 'password-good';
                         bsLevel = 'success';
