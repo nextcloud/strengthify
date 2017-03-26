@@ -199,9 +199,9 @@
 
                 $.ajax({
                     cache: true,
-                    dataType: 'script',
                     url: options.zxcvbn
-                }).done(function() {
+                }).done(function(content) {
+                    eval(content);
                     $elem.bind('keyup input change', drawSelf);
                 });
             };
