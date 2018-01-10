@@ -49,6 +49,7 @@ be configured with the first parameter of `.strengthify`.
 <dt>drawTitles</dt><dd> pop-up text (above)</dd>
 <dt>drawMessage</dt><dd> detailed message beneath input</dd>
 <dt>drawBars</dt><dd> password strength color progression bars beneath input</dd>
+<dt>$addAfter</dt><dd> element after which the strengthify element should be inserted</dd>
 </dl>
 
 Default:
@@ -65,7 +66,8 @@ Default:
   ],
   "drawTitles": false,
   "drawMessage": false,
-  "drawBars": true
+  "drawBars": true,
+  "$addAfter": null
 }
 ```
 Overwrite example:
