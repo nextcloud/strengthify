@@ -78,6 +78,22 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.3</dt>
+  <dd>
+    <ul>
+      <li>make possible to specify the element to add the strength bar after (#20)</li>
+      <li>provide minified version (#16)</li>
+    </ul>
+  </dd>
+  <dt>0.5.2</dt>
+  <dd>
+    <ul>
+      <li>use eval directly (#14)</li>
+      <li>added missing break (#13)</li>
+    </ul>
+  </dd>
+  <dt>0.5.1</dt>
+  <dd>add tilesOptions (#10) - you can choose now between tooltip and element or both - thanks to @feirer</dd>
   <dt>0.5.0</dt>
   <dd> fairly substantial changes:
     <ul>
