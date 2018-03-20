@@ -52,8 +52,7 @@
             drawTitles: false,
             drawMessage: false,
             drawBars: true,
-            $addAfter: null,
-            onResult: null
+            $addAfter: null
         };
 
         return this.each(function() {
@@ -91,7 +90,7 @@
                     '"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"'
                     );
 
-                if (options.onResult !== undefined && null !== options.onResult) {
+                if (options.onResult) {
                     options.onResult(result);
                 }
 

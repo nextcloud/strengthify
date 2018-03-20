@@ -67,8 +67,7 @@ Default:
   "drawTitles": false,
   "drawMessage": false,
   "drawBars": true,
-  "$addAfter": null,
-  "onResult": null
+  "$addAfter": null
 }
 ```
 Overwrite example:
