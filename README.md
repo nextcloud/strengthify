@@ -67,13 +67,31 @@ Default:
   "drawTitles": false,
   "drawMessage": false,
   "drawBars": true,
-  "$addAfter": null
+  "$addAfter": null,
+  "onResult": null
 }
 ```
 Overwrite example:
 
 ```JavaScript
 $('#password-field').strengthify({zxcvbn: 'my/path/to/zxcvbn.js'})
+```
+
+Use 'onResult' callback option like:
+
+```JavaScript
+$('#password-field').strengthify({
+    zxcvbn: 'my/path/to/zxcvbn.js',
+    onResult: function(result) {
+        var submitBtn = $('input[type=submit]');
+      
+        if (result.score < 3) {
+          submitBtn.prop('disabled', 'disabled');
+        } else {
+          submitBtn.prop('disabled', false);
+        }
+    }
+})
 ```
 
 Versions

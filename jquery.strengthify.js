@@ -52,7 +52,8 @@
             drawTitles: false,
             drawMessage: false,
             drawBars: true,
-            $addAfter: null
+            $addAfter: null,
+            onResult: null
         };
 
         return this.each(function() {
@@ -89,6 +90,10 @@
                     .css('-ms-filter',
                     '"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"'
                     );
+
+                if (options.onResult !== undefined && null !== options.onResult) {
+                    options.onResult(result);
+                }
 
                 // style strengthify bar
                 // possible scores: 0-4
