@@ -97,6 +97,12 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.4</dt>
+  <dd>
+    <ul>
+      <li>do not use `eval()` anymore (#19)</li>
+    </ul>
+  </dd>
   <dt>0.5.3</dt>
   <dd>
     <ul>
