@@ -50,6 +50,7 @@ be configured with the first parameter of `.strengthify`.
 <dt>drawMessage</dt><dd> detailed message beneath input</dd>
 <dt>drawBars</dt><dd> password strength color progression bars beneath input</dd>
 <dt>$addAfter</dt><dd> element after which the strengthify element should be inserted</dd>
+<dt>nonce</dt><dd> a nonce that is added to the `<script>` tag to load the zxcvbn.js file asynchronously</dd>
 </dl>
 
 Default:
