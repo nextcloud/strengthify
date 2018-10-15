@@ -211,7 +211,7 @@
                 var script = document.createElement("script");
                 script.src = options.zxcvbn;
                 if (options.nonce !== null) {
-                    script.nonce = options.nonce;
+                    script.setAttribute('nonce', options.nonce);
                 }
                 document.head.appendChild(script);
 
