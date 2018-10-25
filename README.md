@@ -98,6 +98,18 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.6</dt>
+  <dd>
+    <ul>
+      <li>set the nonce properly in all browsers (#24)</li>
+    </ul>
+  </dd>
+  <dt>0.5.5</dt>
+  <dd>
+    <ul>
+      <li>allow to specify a nonce for the loaded script (#23)</li>
+    </ul>
+  </dd>
   <dt>0.5.4</dt>
   <dd>
     <ul>
