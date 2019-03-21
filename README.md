@@ -46,6 +46,7 @@ be configured with the first parameter of `.strengthify`.
 
 
 <dl>
+<dt>userInputs</dt><dd> an array of strings that zxcvbn will treat as an extra dictionary</dd>
 <dt>drawTitles</dt><dd> pop-up text (above)</dd>
 <dt>drawMessage</dt><dd> detailed message beneath input</dd>
 <dt>drawBars</dt><dd> password strength color progression bars beneath input</dd>
@@ -58,6 +59,7 @@ Default:
 ```JSON
 {
   "zxcvbn": "zxcvbn/zxcvbn.js",
+  "userInputs": [],
   "titles": [
     "Weakest",
     "Weak",

@@ -38,6 +38,7 @@
 
         var defaults = {
             zxcvbn: 'zxcvbn/zxcvbn.js',
+            userInputs: [],
             titles: [
                 'Weakest',
                 'Weak',
@@ -74,7 +75,7 @@
                     // hide strengthify if no input is provided
                     opacity = (password === '') ? 0 : 1,
                     // calculate result
-                    result = zxcvbn(password),
+                    result = zxcvbn(password, options.userInputs),
                     // setup some vars for later
                     css = '',
                     bsLevel = '',
