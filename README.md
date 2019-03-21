@@ -100,6 +100,12 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.7</dt>
+  <dd>
+    <ul>
+      <li>add option for user input (#27)</li>
+    </ul>
+  </dd>
   <dt>0.5.6</dt>
   <dd>
     <ul>
