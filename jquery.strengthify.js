@@ -214,9 +214,12 @@
                 if (options.nonce !== null) {
                     script.setAttribute('nonce', options.nonce);
                 }
-                document.head.appendChild(script);
 
-                $elem.bind('keyup input change', drawSelf);
+                script.onload = function() {
+                        $elem.bind('keyup input change', drawSelf);
+                }
+
+                document.head.appendChild(script);
             };
 
             init.call(this);
