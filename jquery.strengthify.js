@@ -207,16 +207,18 @@
                     getWrapperFor(elemId).append('<div class="strengthify-tiles"></div>');
                 }
 
-                $elem.parent().on('scroll', drawSelf);
-
                 var script = document.createElement("script");
                 script.src = options.zxcvbn;
                 if (options.nonce !== null) {
                     script.setAttribute('nonce', options.nonce);
                 }
-                document.head.appendChild(script);
 
-                $elem.bind('keyup input change', drawSelf);
+                script.onload = function() {
+                	$elem.parent().on('scroll', drawSelf);
+                        $elem.bind('keyup input change', drawSelf);
+                }
+
+                document.head.appendChild(script);
             };
 
             init.call(this);
