@@ -100,6 +100,12 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.8</dt>
+  <dd>
+    <ul>
+      <li>wait for load of script before binding (#28)</li>
+    </ul>
+  </dd>
   <dt>0.5.7</dt>
   <dd>
     <ul>
