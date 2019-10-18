@@ -103,7 +103,7 @@ Versions
   <dt>0.5.8</dt>
   <dd>
     <ul>
-      <li>wait for load of script before binding (https://github.com/morrisjobke/strengthify/pulls/28)</li>
+      <li>wait for load of script before binding (https://github.com/morrisjobke/strengthify/pull/28)</li>
     </ul>
   </dd>
   <dt>0.5.7</dt>
