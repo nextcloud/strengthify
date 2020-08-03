@@ -70,7 +70,7 @@
             };
 
             function drawStrengthify() {
-                var password = $(this).val(),
+                var password = $(this).val().substring(0, 100),
                     elemId = $(this).attr('id'),
                     // hide strengthify if no input is provided
                     opacity = (password === '') ? 0 : 1,
