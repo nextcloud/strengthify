@@ -100,6 +100,12 @@ Versions
 --------
 
 <dl>
+  <dt>0.5.9</dt>
+  <dd>
+    <ul>
+      <li>Don't overdo the strength check, the first 100 chars are enough (https://github.com/morrisjobke/strengthify/pull/32)</li>
+    </ul>
+  </dd>
   <dt>0.5.8</dt>
   <dd>
     <ul>
