@@ -92,8 +92,11 @@
                     '"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + opacity * 100 + ')"'
                     );
 
+                if (options.alterResult) {
+                    result = options.alterResult(result, this);
+                }
                 if (options.onResult) {
-                    options.onResult(result);
+                    options.onResult(result, this);
                 }
 
                 // style strengthify bar
