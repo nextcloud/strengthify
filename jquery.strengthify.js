@@ -207,18 +207,25 @@
                     getWrapperFor(elemId).append('<div class="strengthify-tiles"></div>');
                 }
 
-                var script = document.createElement("script");
-                script.src = options.zxcvbn;
-                if (options.nonce !== null) {
-                    script.setAttribute('nonce', options.nonce);
-                }
+                if (options.zxcvbn) {
+                    // Load zxcvbn.js asynchronously
+                    var script = document.createElement("script");
+                    script.src = options.zxcvbn;
+                    if (options.nonce !== null) {
+                        script.setAttribute('nonce', options.nonce);
+                    }
 
-                script.onload = function() {
-                	$elem.parent().on('scroll', drawSelf);
+                    script.onload = function() {
+                    	$elem.parent().on('scroll', drawSelf);
                         $elem.bind('keyup input change', drawSelf);
-                }
+                    }
 
-                document.head.appendChild(script);
+                    document.head.appendChild(script);
+                } else {
+                    // Assume zxcvbn.js is already loaded
+                    $elem.parent().on('scroll', drawSelf);
+                    $elem.bind('keyup input change', drawSelf);
+                }
             };
 
             init.call(this);

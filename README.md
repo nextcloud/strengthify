@@ -46,6 +46,7 @@ be configured with the first parameter of `.strengthify`.
 
 
 <dl>
+<dt>zxcvbn</dt><dd> path to xzcvbn.js, set to <code>null</code> to disable dynamic loading and assume zxcvbn.js is already loaded</dd>
 <dt>userInputs</dt><dd> an array of strings that zxcvbn will treat as an extra dictionary</dd>
 <dt>drawTitles</dt><dd> pop-up text (above)</dd>
 <dt>drawMessage</dt><dd> detailed message beneath input</dd>
@@ -86,7 +87,7 @@ $('#password-field').strengthify({
     zxcvbn: 'my/path/to/zxcvbn.js',
     onResult: function(result) {
         var submitBtn = $('input[type=submit]');
-      
+
         if (result.score < 3) {
           submitBtn.prop('disabled', 'disabled');
         } else {
