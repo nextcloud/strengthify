@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/MorrisJobke/strengthify/issues"
   },
-  "homepage": "https://github.com/MorrisJobke/strengthify#readme"
+  "homepage": "https://github.com/MorrisJobke/strengthify#readme",
+  "engines": {
+    "node": "^20.0.0",
+    "npm": "^10.0.0"
+  }
 }
